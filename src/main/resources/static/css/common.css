@@ -1,0 +1,144 @@
+@charset "UTF-8";
+
+/********** 초기화 **********/
+body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset,
+	legend, p, select, table, th, td, tr, textarea, button, form {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+.clfix {
+	zoom: 1;
+	display: block;
+}
+
+.clfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	font-size: 0;
+	line-height: 0;
+}
+
+body {
+	font-family: "맑은 고딕", 돋음;
+	font-size: 12px;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+img {
+	vertical-align: top;
+}
+
+a:link {
+	text-decoration: none;
+	color: black;
+}
+
+a:visited {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	text-decoration: none;
+	color: black;
+}
+
+a:active {
+	text-decoration: none;
+	color: black;
+}
+
+/** footer 하단 고정 **/
+body {
+	min-height: 95vh; /* 최소 높이를 지정 */
+	display: flex;
+	flex-direction: column;
+	margin: 0px;
+}
+
+
+/** 폭 설정 **/
+.row {
+	width: 100%;
+}
+
+/** float **/
+.float_left {
+	float: left;
+}
+.float_right {
+	float: right;
+}
+/** nav **/
+#navbox {
+	display: flex;
+	border-bottom: 3px solid #59007e;
+	margin: auto;
+}
+
+.navbars {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 8px 12px;
+}
+
+/** nav_logo **/
+.navbar_logo {
+	padding-top: 8px;
+	font-family: 'Pacifico', cursive;
+	font-size: 35px;
+	margin-right: 30px;
+	cursor: pointer;
+}
+
+
+/** nav_menu **/
+
+.navbar_menu li {
+	padding: 0px 45px;
+	padding-top: 20px;
+	font-size: 23px;
+	float: left;
+}
+
+.navbar_menu a:hover {
+	color: #59007e;
+	font-weight: bold;
+}
+
+/** nav_login **/
+.navbar_login {
+	display: flex;
+	justify-content: center;
+}
+.navbar_login li {
+	width: 50px;
+	margin-top: 50px;
+	font-size: 11px;
+}
+
+/** cont_wrap **/
+.cont_wrap {
+	height: auto;
+}
+
+/** footer **/
+#footerbox {
+	height: 60px;
+	position: relative;
+	border-top: 1px solid #bfbfbf;
+	margin-top: auto;
+	font-size: 13px;
+}
+
+.dropdown:hover .dropdown-menu {
+	display: block;
+}
