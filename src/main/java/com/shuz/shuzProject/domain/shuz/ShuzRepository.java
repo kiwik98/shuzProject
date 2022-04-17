@@ -10,6 +10,12 @@ public interface ShuzRepository extends JpaRepository<Shuz, Long> {
     @Query("Select s from shoes s ORDER BY s.shoes_no DESC")
     List<Shuz> findAllDesc();
 
-    @Query("select s from shoes s where s.shoes_type = :shoes_type")
-    List<Shuz> findByShoesTypeAll(@Param("shoes_type") char shoes_type);
+    @Query("select s from shoes s where s.shoes_sex = :shoes_sex")
+    List<Shuz> findByShoesSexAll(@Param("shoes_sex") char shoes_sex);
+
+    @Query("select s from shoes s where s.shoes_sex = :shoes_sex and s.shoes_type = :shoes_type")
+    List<Shuz> findByShoesTypeAll(@Param("shoes_sex") char shoes_sex,
+                                  @Param("shoes_type") char shoes_type);
 }
+
+

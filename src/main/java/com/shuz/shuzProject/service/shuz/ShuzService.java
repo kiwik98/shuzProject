@@ -16,16 +16,22 @@ public class ShuzService {
 
     private final ShuzRepository shuzRepository;
 
-    public List<ShuzListResponseDto> findByShoesTypeAll(char shoes_type) {
-        return shuzRepository.findByShoesTypeAll(shoes_type).stream()
-                .map(ShuzListResponseDto::new)	// {2}
+    public List<ShuzListResponseDto> findByShoesSexAll(char shoes_sex) {// 신발 종류 카테고리 리스트
+        return shuzRepository.findByShoesSexAll(shoes_sex).stream()
+                .map(ShuzListResponseDto::new)
+                .collect(Collectors.toList());
+    }
+
+    public List<ShuzListResponseDto> findByShoesTypeAll(char shoes_sex, char shoes_type) {// 신발 종류 카테고리 리스트
+        return shuzRepository.findByShoesTypeAll(shoes_sex, shoes_type).stream()
+                .map(ShuzListResponseDto::new)
                 .collect(Collectors.toList());
     }
 
     @Transactional
     public List<ShuzListResponseDto> findAllDesc() {
         return shuzRepository.findAllDesc().stream()
-                .map(ShuzListResponseDto::new)	// {2}
+                .map(ShuzListResponseDto::new)
                 .collect(Collectors.toList());
     }
 }

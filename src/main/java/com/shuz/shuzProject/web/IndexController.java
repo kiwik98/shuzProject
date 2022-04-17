@@ -20,17 +20,17 @@ public class IndexController {
         return "index";
     }
 
-    // 신발 전체
-    @GetMapping("/shuz")
-    public String shuz(Model model) {
-        model.addAttribute("shuz", shuzService.findAllDesc());
+    // 젠더별 신발 전체 리스트
+    @GetMapping("/shuz/{shoes_sex}")
+    public String findByShoesSexAll(@PathVariable char shoes_sex, Model model) {
+        model.addAttribute("shuz", shuzService.findByShoesSexAll(shoes_sex));
         return "shuz";
     }
 
-    // 신발 카테고리
-    @GetMapping("/shuz/{shoes_type}")
-    public String shuz(@PathVariable char shoes_type, Model model) {
-        model.addAttribute("shuz", shuzService.findByShoesTypeAll(shoes_type));
+    // 신발 종류 카테고리 리스트
+    @GetMapping("/shuz/{shoes_sex}/{shoes_type}")
+    public String findByShoesTypeAll(@PathVariable char shoes_sex, @PathVariable char shoes_type, Model model) {
+        model.addAttribute("shuz", shuzService.findByShoesTypeAll(shoes_sex, shoes_type));
         return"shuz";
     }
 
