@@ -1,7 +1,9 @@
 package com.shuz.shuzProject.web.dto;
 
 import com.shuz.shuzProject.domain.shuz.Shuz;
+import lombok.Getter;
 
+@Getter
 public class ShuzListResponseDto {
     private Long shoes_no;
     private String shoes_name;

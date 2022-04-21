@@ -10,31 +10,22 @@
         <div class="category_contents">
             <div class="category_list_wrap">
                 <ul class="category_list" style="padding: 0; margin: 0;">
-                    <li class="category_items purple">Nike</li>
-                    <li class="category_items">Adidas</li>
-                    <li class="category_items">Vans</li>
-                    <li class="category_items">Converse</li>
-                    <li class="category_items">New Balance</li>
+                    <li class="category_items"><a class="brand_items" href="" style="display:block;">Nike</a></li>
+                    <li class="category_items"><a class="brand_items" href="" style="display:block;">Adidas</a></li>
+                    <li class="category_items"><a class="brand_items" href="" style="display:block;">Vans</a></li>
+                    <li class="category_items"><a class="brand_items" href="" style="display:block;">Converse</a></li>
+                    <li class="category_items"><a class="brand_items" href="" style="display:block;">New Balance</a></li>
                 </ul>
             </div>
+            <input type="hidden" name="path" value="">
         </div>
         <!-- category_wrap !-->
     </div>
 
     <!-- cont_width !-->
     <div class="cont_width">
-        <div class="breadcrumb_wrap">
-            <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/">Home</a></li>
-                    <li class="breadcrumb-item shoes-gender" aria-current="page">Men</li>
-                    <li class="breadcrumb-item" aria-current="page">운동화</li>
-                    <li class="breadcrumb-item" aria-current="page">Nike</li>
-                </ol>
-            </nav>
-        </div>
         <div class="page_title_wrap">
-            <h2 class="text_head">ALL</h2>
+            <h2 class="text_head">{{head}}</h2>
         </div>
         <div class="contents_inner">
             <div class="col_list_wrap">
@@ -91,5 +82,31 @@
 
 
 </div>
+<script>
+  //브랜드 카테고리 클릭이벤트
+  $('.brand_items').click( function(e) {
+    e.preventDefault();
+    var brand_items = $(this).text();
+    var pathname = $(location).attr('pathname'); //현재 url pathname 담기
+    var spt = pathname.split("/"); // '/'기준으로 spt 배열에 담기
+    console.log(spt[0]);
+    console.log(spt[3]);
+    console.log(spt.length);
+    if(spt.length>4){ // spt배열 길이가 4보다 클 때 = url에 brand_type이 있을 때
+            pathname = "";
+        for(var i = 1;i < spt.length-1; i++) { //for문으로 brand_type 전까지 담기
+
+            pathname = pathname +"/"+ spt[i];
+        }
+        console.log('pathname='+pathname);
+    }
+
+    var href = pathname+'/'+brand_items; // brand 파라미터 가져와서 담기
+    console.log(href);
+    window.location.href = href; //다시 이벤트 실행
+
+  });
+
+</script>
 <!-- cont_wrap !-->
 {{>layout/footer}}
