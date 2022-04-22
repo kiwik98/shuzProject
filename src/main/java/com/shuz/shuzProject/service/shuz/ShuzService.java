@@ -3,6 +3,7 @@ package com.shuz.shuzProject.service.shuz;
 import com.shuz.shuzProject.domain.shuz.Shuz;
 import com.shuz.shuzProject.domain.shuz.ShuzRepository;
 import com.shuz.shuzProject.web.dto.ShuzListResponseDto;
+import com.shuz.shuzProject.web.dto.ShuzResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -45,6 +46,18 @@ public class ShuzService {
                 .collect(Collectors.toList());
     }
     /* 서브메뉴 */
+
+    /* 상세페이지 */
+    public ShuzResponseDto findByProductInfoOne(long shoes_no){
+
+        Shuz entity = shuzRepository.findById(shoes_no).orElseThrow(() ->
+                new IllegalArgumentException("해당 상품이 없습니다. id="+ shoes_no));
+
+        return new ShuzResponseDto(entity);
+
+    }
+
+    /* 상세페이지 */
     @Transactional
     public List<ShuzListResponseDto> findAllDesc() {
         return shuzRepository.findAllDesc().stream()

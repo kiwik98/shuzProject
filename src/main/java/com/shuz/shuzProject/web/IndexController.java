@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-@RequiredArgsConstructor
+@RequiredArgsConstructor //기본 생성자 자동 추가 public shuz() {} 와 같은 효과
 @Controller
 public class IndexController {
 

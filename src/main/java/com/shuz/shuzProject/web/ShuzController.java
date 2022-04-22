@@ -60,13 +60,6 @@ public class ShuzController {
     }
     /* 서브메뉴 */
 
-    /* 상세페이지 */
-    @GetMapping("/shuz/invenInfo")
-    public String invenInfo() {
-        return "invenInfo";
-    }
-
-    /* 상세페이지 */
     // 신발 종류 코드 -> 문자열로 변환 함수
     public static String shoesType(char shoes_type) {
         String type = "";

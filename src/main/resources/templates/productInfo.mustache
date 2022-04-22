@@ -17,21 +17,21 @@
             <div class="product_detail_box clfix">
                 <div class="detail_box_left">
                     <div class="detail_img_wrap">
-                        <img src="/img/nike/nike1.png">
+                        <img src="/img/{{shuz.brand_type}}/{{shuz.shoes_img}}">
                     </div>
                 </div>
                 <div class="detail_box_right">
                     <div class="detail_box_header">
                         <div class="price_wrap clfix">
                             <div class="float_left">
-                                <span class="prod_subtitle">운동화</span>
+                                <span class="prod_subtitle"><strong>{{head}}</strong></span>
                             </div>
                             <div class="float_right">
-                                <span class="price"><strong>189,000 원</strong></span>
+                                <span class="price"><strong>{{shuz.shoes_price}} 원</strong></span>
                             </div>
                         </div>
                         <h1 class="title_wrap">
-                            <span class="tit">나이키 줌X 스트릭플라이</span>
+                            <span class="tit">{{shuz.shoes_name}}</span>
                         </h1>
                     </div>
                     <div class="size_wrap">
@@ -41,59 +41,73 @@
                             </div>
                             <div class="size_option_group">
                                 <div class=" btn-group-lg" role="group" aria-label="Basic radio toggle button group">
-                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                                    <input type="radio" class="btn-check" value="250" name="btnradio" id="btnradio1" autocomplete="off" checked>
                                     <label class="btn btn-outline-dark" for="btnradio1">250</label>
 
-                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                                    <input type="radio" class="btn-check" value="255" name="btnradio" id="btnradio2" autocomplete="off">
                                     <label class="btn btn-outline-dark" for="btnradio2">255</label>
 
-                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                                    <input type="radio" class="btn-check" value="260" name="btnradio" id="btnradio3" autocomplete="off">
                                     <label class="btn btn-outline-dark" for="btnradio3">260</label>
 
-                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
+                                    <input type="radio" class="btn-check" value="265" name="btnradio" id="btnradio4" autocomplete="off">
                                     <label class="btn btn-outline-dark" for="btnradio4">265</label>
 
-                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
+                                    <input type="radio" class="btn-check" value="270" name="btnradio" id="btnradio5" autocomplete="off">
                                     <label class="btn btn-outline-dark" for="btnradio5">270</label>
 
-                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio6" autocomplete="off">
+                                    <input type="radio" class="btn-check"  value="275" name="btnradio" id="btnradio6" autocomplete="off">
                                     <label class="btn btn-outline-dark" for="btnradio6">275</label>
 
-                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio7" autocomplete="off">
+                                    <input type="radio" class="btn-check" value="280" name="btnradio" id="btnradio7" autocomplete="off">
                                     <label class="btn btn-outline-dark" for="btnradio7">280</label>
 
-                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio8" autocomplete="off">
+                                    <input type="radio" class="btn-check" value="285" name="btnradio" id="btnradio8" autocomplete="off">
                                     <label class="btn btn-outline-dark" for="btnradio8">285</label>
 
-                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio9" autocomplete="off">
+                                    <input type="radio" class="btn-check" value="290" name="btnradio" id="btnradio9" autocomplete="off">
                                     <label class="btn btn-outline-dark" for="btnradio9">290</label>
 
-                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio10" autocomplete="off">
+                                    <input type="radio" class="btn-check" value="295" name="btnradio" id="btnradio10" autocomplete="off">
                                     <label class="btn btn-outline-dark" for="btnradio10">295</label>
 
-                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio11" autocomplete="off">
+                                    <input type="radio" class="btn-check" value="300" name="btnradio" id="btnradio11" autocomplete="off">
                                     <label class="btn btn-outline-dark" for="btnradio11">300</label>
                                 </div>
                             </div>
                             <div class="btn_group">
                                 <div class="d-grid gap-2 btn">
-                                    <a class="btn btn-dark">재고 조회</a>
+                                    <button type="button" class="btn btn-dark btn-invenCheck"
+                                            data-bs-toggle="modal" data-bs-target="#invenModal">재고 조회</button>
                                     <a class="btn btn-primary">온라인 구매</a>
                                 </div>
                             </div>
                         </form>
+                        <!-- Modal -->
+                        <div class="modal fade" id="invenModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">재고 조회</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="product-wrap">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- size_wrap !-->
                 </div>
                 <!-- detail_box_right !-->
             </div>
             <!-- product_detail_box !-->
-
-            <!-- inven_store_list_box !-->
-            <div class="inven_store_list_box">
-
-            </div>
-            <!-- inven_store_list_box !-->
         </div>
         <!-- cont_inner !-->
     </div>
