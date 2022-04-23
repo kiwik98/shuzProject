@@ -1,8 +1,35 @@
 {{>layout/header}}
 <!-- cont_wrap !-->
 <div class="cont_wrap" style="height: 700px;text-align: center;font-size: 40px;">
-    <strong>메인화면</strong>
+    <div style="width:1000px;height:1000px;margin:auto;">
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/img/banner/banner1.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="/img/banner/banner2.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="/img/banner/banner3.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="/img/banner/banner4.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="/img/banner/banner5.png" class="d-block w-100" alt="...">
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
 <!-- cont_wrap !-->
 {{>layout/footer}}
+<script>
+    var myCarousel = document.querySelector('#myCarousel')
+    var carousel = new bootstrap.Carousel(myCarousel, {
+      interval: 3000,
+      wrap: true
+    })
+</script>

@@ -32,7 +32,8 @@ ol, ul {
 }
 
 img {
-	vertical-align: top;
+	max-width: 100%;
+	display: inline-block;
 }
 
 a:link {

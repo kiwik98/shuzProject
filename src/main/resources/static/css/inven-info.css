@@ -56,4 +56,151 @@
     border-bottom: solid 1px #e5e5e5;
 }
 
+/** 모달창 **/
+
+.modal-body .product-wrap {
+    margin-bottom: 30px;
+}
+
+.product-wrap .name {
+    margin-top: 24px;
+    font-size: 14px;
+    color: #8d8d8d;
+    text-align: center;
+}
+
+.product-wrap .size {
+    font-size: 14px;
+    color: indigo;
+    text-align: center;
+}
+
+.color-image-wrap .img-type-box {
+    position: absolute;
+    left: 50%;
+    margin-left: -90px;
+    width: 180px;
+    height: 180px;
+}
+
+.img-type-box .img-type {
+    display: block;
+    padding: 5%;
+}
+
+.modal-body .inven-search {
+    position: static;
+    width: 100%;
+    max-height: 350px;
+    display: none;
+    border-left: 1px #fff solid;
+    padding-top: 0;
+    overflow-y: scroll;
+    font-size: 12px;
+    background-color: #ffffff;
+}
+
+/* 재고 매장 리스트 헤더 */
+.store-list .shipping-header {
+    display: table;
+    width: 100%;
+    height: 40px;
+    background-color: #f4f4f4;
+}
+
+.store-list .shipping-header .store-name {
+    display: table-cell;
+    padding: 13px 16px 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #111111;
+}
+
+.store-list .shipping-header .prd-cnt {
+    display: table-cell;
+    width: 136px;
+    padding: 13px 16px 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #111111;
+    border-left: 1px solid #fff;
+}
+
+/* 재고 매장 리스트 바디 */
+.store-list .shipping-body .shipping-list {
+    display: table;
+    width: 100%;
+    border-top: 0;
+    border-bottom: 1px solid #dedfda;
+    padding: 0;
+    color: #111111;
+}
+
+/* 매장 리스트 매장명 탭 */
+.shipping-list .column-addr {
+    display: table-cell;
+    padding: 16px 16px 0;
+    vertical-align: top;
+}
+
+.column-addr .tit {
+    margin: 0 0 5px 0;
+    font-weight: bold;
+    color: #111111;
+    font-size: 14px;
+}
+
+.column-addr .address-wrap {
+    clear: both;
+    float: left;
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.address-wrap .addr-type {
+    display: inline-block;
+    float: left;
+    width: 40px;
+    height: 20px;
+    margin-right: 4px;
+    padding-top: 0;
+    border-radius: 2px;
+    border: 1px solid #ddd;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 18px;
+    text-align: center;
+    color: #111111;
+    box-sizing: border-box;
+    letter-spacing: -0.2px;
+}
+
+.address-wrap .addr {
+    min-height: 24px;
+    padding-top: 0;
+    font-size: 12px;
+    color: #8d8d8d;
+    line-height: 1.6;
+    overflow: hidden;
+}
+
+/*매장 리스트 수량 탭 */
+.shipping-list .column-reserve {
+    display: table-cell;
+    width: 136px;
+    padding: 16px;
+    border-left: 1px solid #fff;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.column-reserve .quantity {
+    display: block;
+    color: #fa5400;
+    font-size: 14px;
+}
+
+
 

@@ -3,17 +3,10 @@
 <div class="cont_wrap">
     <!-- cont_width !-->
     <div class="cont_width">
-        <div class="breadcrumb_wrap">
-            <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item" aria-current="page">Men</li>
-                    <li class="breadcrumb-item" aria-current="page">운동화</li>
-                    <li class="breadcrumb-item" aria-current="page">Nike</li>
-                </ol>
-            </nav>
-        </div>
         <div class="contents_inner">
+            <div class="history-back" style="margin-bottom:20px;">
+                <a href="#" onClick="history.back();"><img src="/img/icon/back.png" style="width:30px;"></a>
+            </div>
             <div class="product_detail_box clfix">
                 <div class="detail_box_left">
                     <div class="detail_img_wrap">
@@ -88,16 +81,77 @@
                             <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">재고 조회</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel" style="font-weight:bold;">재고 조회</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
                                         <div class="product-wrap">
+                                            <h3 class="name">{{shuz.shoes_name}}</h3>
+                                            <h3 class="size">270</h3>
+                                            <div class="color-image-wrap" style="position:relative; height:180px;">
+                                                <div class="img-type-box">
+                                                    <span class="img-type">
+                                                        <img src="/img/{{shuz.brand_type}}/{{shuz.shoes_img}}">
+                                                    </span>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                        <div class="store-wrap">
+                                        <div id="storeInvenSearch" class="inven-search" style="display:block;">
+                                            <div class="scroll-box">
+                                                <div class="store-list">
+                                                    <div class="shipping-header">
+                                                        <span class="store-name">매장명</span>
+                                                        <span class="prd-cnt">수량</span>
+                                                    </div>
+                                                    <div class="shipping-body">
+                                                        <div class="shipping-list">
+                                                            <div class="column column-addr">
+                                                                <h2 class="tit">아디다스 강남브랜드센터</h2>
+                                                                <dl class="address-wrap">
+                                                                    <dt class="addr-type">도로명</dt>
+                                                                    <dd class="addr">서울 강남구 강남대로 470 1~4층</dd>
+                                                                    <dt class="addr-type">연락처</dt>
+                                                                    <dd class="addr" style="color:#288756;">02-2052-1366</dd>
+                                                                </dl>
+                                                            </div>
+                                                            <div class="column column-reserve">
+                                                                <span class="quantity">12</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="shipping-list">
+                                                            <div class="column column-addr">
+                                                                <h2 class="tit">아디다스 홍대브랜드센터</h2>
+                                                                <dl class="address-wrap">
+                                                                    <dt class="addr-type">도로명</dt>
+                                                                    <dd class="addr">서울 마포구 양화로 148 스칼렛빌딩 1~3층</dd>
+                                                                    <dt class="addr-type">연락처</dt>
+                                                                    <dd class="addr" style="color:#288756;">02-338-8684</dd>
+                                                                </dl>
+                                                            </div>
+                                                            <div class="column column-reserve">
+                                                                <span class="quantity">5</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="shipping-list">
+                                                            <div class="column column-addr">
+                                                                <h2 class="tit">아디다스 노원점</h2>
+                                                                <dl class="address-wrap">
+                                                                    <dt class="addr-type">도로명</dt>
+                                                                    <dd class="addr">서울 노원구 노해로81길 12-4 화랑상가</dd>
+                                                                    <dt class="addr-type">연락처</dt>
+                                                                    <dd class="addr" style="color:#288756;">02-936-9650</dd>
+                                                                </dl>
+                                                            </div>
+                                                            <div class="column column-reserve">
+                                                                <span class="quantity">3</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
