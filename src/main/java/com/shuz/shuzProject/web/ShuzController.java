@@ -18,20 +18,20 @@ public class ShuzController {
 
     /* 메인메뉴 */
     // 젠더별 신발 전체 리스트
-    @GetMapping("/shuz/{shoes_sex}/all")
-    public String findByShoesSexAll(@PathVariable char shoes_sex, Model model) {
+    @GetMapping("/shuz/{shoesSex}/all")
+    public String findByShoesSexAll(@PathVariable char shoesSex, Model model) {
 
-        List<ShuzListResponseDto> list = shuzService.findByShoesSexAll(shoes_sex);
+        List<ShuzListResponseDto> list = shuzService.findByShoesSexAll(shoesSex);
         model.addAttribute("shuz", list);
         model.addAttribute("head", "ALL");
         return "shuz";
     }
 
     // 신발 종류 카테고리 리스트
-    @GetMapping("/shuz/{shoes_sex}/{shoes_type}")
-    public String findByShoesTypeAll(@PathVariable char shoes_sex, @PathVariable char shoes_type, Model model) {
-        String type = shoesType(shoes_type);
-        List<ShuzListResponseDto> list = shuzService.findByShoesTypeAll(shoes_sex, shoes_type);
+    @GetMapping("/shuz/{shoesSex}/{shoesType}")
+    public String findByShoesTypeAll(@PathVariable char shoesSex, @PathVariable char shoesType, Model model) {
+        String type = shoesType(shoesType);
+        List<ShuzListResponseDto> list = shuzService.findByShoesTypeAll(shoesSex, shoesType);
         model.addAttribute("shuz", list);
         model.addAttribute("head", type);
         return"shuz";
@@ -40,20 +40,20 @@ public class ShuzController {
 
     /* 서브메뉴 */
     //ALL 브랜드 별 메뉴
-    @GetMapping("/shuz/{shoes_sex}/all/{brand_type}")
-    public String findByBrandTypeAll(@PathVariable char shoes_sex, @PathVariable String brand_type, Model model) {
-        List<ShuzListResponseDto> list = shuzService.findByBrandTypeAll(shoes_sex, brand_type);
+    @GetMapping("/shuz/{shoesSex}/all/{brandType}")
+    public String findByBrandTypeAll(@PathVariable char shoesSex, @PathVariable String brandType, Model model) {
+        List<ShuzListResponseDto> list = shuzService.findByBrandTypeAll(shoesSex, brandType);
         model.addAttribute("shuz", list);
         model.addAttribute("head", "ALL");
         return "shuz";
     }
     //신발 종류 브랜드 별 메뉴
-    @GetMapping("/shuz/{shoes_sex}/{shoes_type}/{brand_type}")
-    public String findByBrandTypeAll(@PathVariable char shoes_sex, @PathVariable char shoes_type,
-                                     @PathVariable String brand_type, Model model) {
+    @GetMapping("/shuz/{shoesSex}/{shoesType}/{brandType}")
+    public String findByBrandTypeAll(@PathVariable char shoesSex, @PathVariable char shoesType,
+                                     @PathVariable String brandType, Model model) {
 
-        String type = shoesType(shoes_type);
-        List<ShuzListResponseDto> list = shuzService.findByBrandTypeOne(shoes_sex, shoes_type, brand_type);
+        String type = shoesType(shoesType);
+        List<ShuzListResponseDto> list = shuzService.findByBrandTypeOne(shoesSex, shoesType, brandType);
         model.addAttribute("shuz", list);
         model.addAttribute("head", type);
         return "shuz";
@@ -61,9 +61,9 @@ public class ShuzController {
     /* 서브메뉴 */
 
     // 신발 종류 코드 -> 문자열로 변환 함수
-    public static String shoesType(char shoes_type) {
+    public static String shoesType(char shoesType) {
         String type = "";
-        switch (shoes_type) { // 머스테치 if문 x 컨트롤러에서 최종값 보내주기
+        switch (shoesType) { // 머스테치 if문 x 컨트롤러에서 최종값 보내주기
             case '0':
                 type = "스니커즈";
                 break;

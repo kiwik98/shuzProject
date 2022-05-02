@@ -15,11 +15,11 @@ public class ProductController {
     private final ShuzService shuzService;
 
     /* 상세페이지 */
-    @GetMapping("/product/{shoes_no}")
-    public String findByProductInfoOne(@PathVariable long shoes_no, Model model) {
+    @GetMapping("/product/{shoesNo}")
+    public String findByProductInfoOne(@PathVariable long shoesNo, Model model) {
 
-        ShuzResponseDto productInfo = shuzService.findByProductInfoOne(shoes_no);
-        String type = ShuzController.shoesType(productInfo.getShoes_type());
+        ShuzResponseDto productInfo = shuzService.findByProductInfoOne(shoesNo);
+        String type = ShuzController.shoesType(productInfo.getShoesType());
 
         model.addAttribute("shuz", productInfo);
         model.addAttribute("head", type);

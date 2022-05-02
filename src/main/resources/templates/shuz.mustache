@@ -10,11 +10,11 @@
         <div class="category_contents">
             <div class="category_list_wrap">
                 <ul class="category_list" style="padding: 0; margin: 0;">
-                    <li class="category_items"><a class="brand_items" href="" style="display:block;">Nike</a></li>
-                    <li class="category_items"><a class="brand_items" href="" style="display:block;">Adidas</a></li>
-                    <li class="category_items"><a class="brand_items" href="" style="display:block;">Vans</a></li>
-                    <li class="category_items"><a class="brand_items" href="" style="display:block;">Converse</a></li>
-                    <li class="category_items"><a class="brand_items" href="" style="display:block;">New Balance</a></li>
+                    <li class="category_items"><a class="brandItems" href="" style="display:block;">Nike</a></li>
+                    <li class="category_items"><a class="brandItems" href="" style="display:block;">Adidas</a></li>
+                    <li class="category_items"><a class="brandItems" href="" style="display:block;">Vans</a></li>
+                    <li class="category_items"><a class="brandItems" href="" style="display:block;">Converse</a></li>
+                    <li class="category_items"><a class="brandItems" href="" style="display:block;">New Balance</a></li>
                 </ul>
             </div>
             <input type="hidden" name="path" value="">
@@ -33,16 +33,16 @@
                     {{#shuz}}
                     <li class="col_list_item" style="min-height: 350px;">
                         <div class="prod_item_inner">
-                            <a class="prod_link" href="/product/{{shoes_no}}">
+                            <a class="prod_link" href="/product/{{shoesNo}}">
                                 <div class="img_wrap">
-                                    <img src="/img/{{brand_type}}/{{shoes_img}}">
+                                    <img src="/img/{{brandType}}/{{shoesImg}}">
                                 </div>
                                 <div class="prod_info_wrap">
 
-                                    <span class="prod_brand">{{brand_type}}</span>
-                                    <span class="prod_name">{{shoes_name}}</span>
+                                    <span class="prod_brand">{{brandType}}</span>
+                                    <span class="prod_name">{{shoesName}}</span>
                                     <span class="prod_price">
-                                                <span class="price_cost">{{shoes_price}}</span>
+                                                <span class="price_cost">{{shoesPrice}}</span>
                                                 <span class="price_unit">원</span>
                                             </span>
                                     <span class="prod_inventory">재고
@@ -84,24 +84,24 @@
 </div>
 <script>
   //브랜드 카테고리 클릭이벤트
-  $('.brand_items').click( function(e) {
+  $('.brandItems').click( function(e) {
     e.preventDefault();
-    var brand_items = $(this).text();
+    var brandItems = $(this).text();
     var pathname = $(location).attr('pathname'); //현재 url pathname 담기
     var spt = pathname.split("/"); // '/'기준으로 spt 배열에 담기
     console.log(spt[0]);
     console.log(spt[3]);
     console.log(spt.length);
-    if(spt.length>4){ // spt배열 길이가 4보다 클 때 = url에 brand_type이 있을 때
+    if(spt.length>4){ // spt배열 길이가 4보다 클 때 = url에 brandType이 있을 때
             pathname = "";
-        for(var i = 1;i < spt.length-1; i++) { //for문으로 brand_type 전까지 담기
+        for(var i = 1;i < spt.length-1; i++) { //for문으로 brandType 전까지 담기
 
             pathname = pathname +"/"+ spt[i];
         }
         console.log('pathname='+pathname);
     }
 
-    var href = pathname+'/'+brand_items; // brand 파라미터 가져와서 담기
+    var href = pathname+'/'+brandItems; // brand 파라미터 가져와서 담기
     console.log(href);
     window.location.href = href; //다시 이벤트 실행
 

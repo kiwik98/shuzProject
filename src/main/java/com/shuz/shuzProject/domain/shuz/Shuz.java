@@ -9,27 +9,28 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 
-@Entity(name = "shoes")
+@Entity
+@Table(name ="shoes")
 public class Shuz {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long shoes_no;
-    private String shoes_name;
-    private char shoes_sex;
-    private char shoes_type;
-    private String brand_type;
-    private String shoes_price;
-    private String shoes_img;
+    private Long shoesNo;
+    private String shoesName;
+    private char shoesSex;
+    private char shoesType;
+    private String brandType;
+    private String shoesPrice;
+    private String shoesImg;
 
     @Builder
-    public Shuz(Long shoes_no, String shoes_name, char shoes_sex, char shoes_type, String brand_type, String shoes_price, String shoes_img) {
-        this.shoes_no = shoes_no;
-        this.shoes_name = shoes_name;
-        this.shoes_sex = shoes_sex;
-        this.shoes_type = shoes_type;
-        this.brand_type = brand_type;
-        this.shoes_price = shoes_price;
-        this.shoes_img = shoes_img;
+    public Shuz(Long shoesNo, String shoesName, char shoesSex, char shoesType, String brandType, String shoesPrice, String shoesImg) {
+        this.shoesNo = shoesNo;
+        this.shoesName = shoesName;
+        this.shoesSex = shoesSex;
+        this.shoesType = shoesType;
+        this.brandType = brandType;
+        this.shoesPrice = shoesPrice;
+        this.shoesImg = shoesImg;
     }
 }

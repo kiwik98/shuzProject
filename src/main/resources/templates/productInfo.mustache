@@ -10,7 +10,7 @@
             <div class="product_detail_box clfix">
                 <div class="detail_box_left">
                     <div class="detail_img_wrap">
-                        <img src="/img/{{shuz.brand_type}}/{{shuz.shoes_img}}">
+                        <img src="/img/{{shuz.brandType}}/{{shuz.shoesImg}}">
                     </div>
                 </div>
                 <div class="detail_box_right">
@@ -20,11 +20,11 @@
                                 <span class="prod_subtitle"><strong>{{head}}</strong></span>
                             </div>
                             <div class="float_right">
-                                <span class="price"><strong>{{shuz.shoes_price}} 원</strong></span>
+                                <span class="price"><strong>{{shuz.shoesPrice}} 원</strong></span>
                             </div>
                         </div>
                         <h1 class="title_wrap">
-                            <span class="tit">{{shuz.shoes_name}}</span>
+                            <span class="tit">{{shuz.shoesName}}</span>
                         </h1>
                     </div>
                     <div class="size_wrap">
@@ -34,39 +34,40 @@
                             </div>
                             <div class="size_option_group">
                                 <div class=" btn-group-lg" role="group" aria-label="Basic radio toggle button group">
-                                    <input type="radio" class="btn-check" value="250" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                                    <input type="radio" class="btn-check" value="250" name="sizeRadio" id="btnradio1" autocomplete="off" checked>
                                     <label class="btn btn-outline-dark" for="btnradio1">250</label>
 
-                                    <input type="radio" class="btn-check" value="255" name="btnradio" id="btnradio2" autocomplete="off">
+                                    <input type="radio" class="btn-check" value="255" name="sizeRadio" id="btnradio2" autocomplete="off">
                                     <label class="btn btn-outline-dark" for="btnradio2">255</label>
 
-                                    <input type="radio" class="btn-check" value="260" name="btnradio" id="btnradio3" autocomplete="off">
+                                    <input type="radio" class="btn-check" value="260" name="sizeRadio" id="btnradio3" autocomplete="off">
                                     <label class="btn btn-outline-dark" for="btnradio3">260</label>
 
-                                    <input type="radio" class="btn-check" value="265" name="btnradio" id="btnradio4" autocomplete="off">
+                                    <input type="radio" class="btn-check" value="265" name="sizeRadio" id="btnradio4" autocomplete="off">
                                     <label class="btn btn-outline-dark" for="btnradio4">265</label>
 
-                                    <input type="radio" class="btn-check" value="270" name="btnradio" id="btnradio5" autocomplete="off">
+                                    <input type="radio" class="btn-check" value="270" name="sizeRadio" id="btnradio5" autocomplete="off">
                                     <label class="btn btn-outline-dark" for="btnradio5">270</label>
 
-                                    <input type="radio" class="btn-check"  value="275" name="btnradio" id="btnradio6" autocomplete="off">
+                                    <input type="radio" class="btn-check"  value="275" name="sizeRadio" id="btnradio6" autocomplete="off">
                                     <label class="btn btn-outline-dark" for="btnradio6">275</label>
 
-                                    <input type="radio" class="btn-check" value="280" name="btnradio" id="btnradio7" autocomplete="off">
+                                    <input type="radio" class="btn-check" value="280" name="sizeRadio" id="btnradio7" autocomplete="off">
                                     <label class="btn btn-outline-dark" for="btnradio7">280</label>
 
-                                    <input type="radio" class="btn-check" value="285" name="btnradio" id="btnradio8" autocomplete="off">
+                                    <input type="radio" class="btn-check" value="285" name="sizeRadio" id="btnradio8" autocomplete="off">
                                     <label class="btn btn-outline-dark" for="btnradio8">285</label>
 
-                                    <input type="radio" class="btn-check" value="290" name="btnradio" id="btnradio9" autocomplete="off">
+                                    <input type="radio" class="btn-check" value="290" name="sizeRadio" id="btnradio9" autocomplete="off">
                                     <label class="btn btn-outline-dark" for="btnradio9">290</label>
 
-                                    <input type="radio" class="btn-check" value="295" name="btnradio" id="btnradio10" autocomplete="off">
+                                    <input type="radio" class="btn-check" value="295" name="sizeRadio" id="btnradio10" autocomplete="off">
                                     <label class="btn btn-outline-dark" for="btnradio10">295</label>
 
-                                    <input type="radio" class="btn-check" value="300" name="btnradio" id="btnradio11" autocomplete="off">
+                                    <input type="radio" class="btn-check" value="300" name="sizeRadio" id="btnradio11" autocomplete="off">
                                     <label class="btn btn-outline-dark" for="btnradio11">300</label>
                                 </div>
+                                <input type="hidden" class="shoesNo" value="{{shuz.shoesNo}}">
                             </div>
                             <div class="btn_group">
                                 <div class="d-grid gap-2 btn">
@@ -86,12 +87,12 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="product-wrap">
-                                            <h3 class="name">{{shuz.shoes_name}}</h3>
+                                            <h3 class="name">{{shuz.shoesName}}</h3>
                                             <h3 class="size">270</h3>
                                             <div class="color-image-wrap" style="position:relative; height:180px;">
                                                 <div class="img-type-box">
                                                     <span class="img-type">
-                                                        <img src="/img/{{shuz.brand_type}}/{{shuz.shoes_img}}">
+                                                        <img src="/img/{{shuz.brandType}}/{{shuz.shoesImg}}">
                                                     </span>
                                                 </div>
                                             </div>

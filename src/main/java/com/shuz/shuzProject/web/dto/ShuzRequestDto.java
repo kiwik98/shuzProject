@@ -10,24 +10,24 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class ShuzRequestDto {
-    private Long shoes_no;
-    private String shoes_name;
-    private char shoes_sex;
-    private char shoes_type;
-    private String brand_type;
-    private String shoes_price;
-    private String shoes_img;
+    private Long shoesNo;
+    private String shoesName;
+    private char shoesSex;
+    private char shoesType;
+    private String brandType;
+    private String shoesPrice;
+    private String shoesImg;
 
 
     public Shuz toEntity() {
         return Shuz.builder()
-                .shoes_no(shoes_no)
-                .shoes_name(shoes_name)
-                .shoes_sex(shoes_sex)
-                .shoes_type(shoes_type)
-                .brand_type(brand_type)
-                .shoes_price(shoes_price)
-                .shoes_img(shoes_img)
+                .shoesNo(shoesNo)
+                .shoesName(shoesName)
+                .shoesSex(shoesSex)
+                .shoesType(shoesType)
+                .brandType(brandType)
+                .shoesPrice(shoesPrice)
+                .shoesImg(shoesImg)
                 .build();
     }
 
