@@ -21,7 +21,8 @@ public class ProductApiController {
 
     @PostMapping("/api/invenSearch")
     @ResponseBody
-    public void invenSearch(@RequestBody ShuzInvenRequestDto requestDto) {
-        inventoryService.findInvenSearch(requestDto);
+    public List<ShuzInvenResponseDto> invenSearch(@RequestBody ShuzInvenRequestDto requestDto) {
+
+        return inventoryService.findInvenSearch(requestDto);
     }
 }

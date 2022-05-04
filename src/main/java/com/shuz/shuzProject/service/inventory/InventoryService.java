@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
@@ -17,20 +19,25 @@ public class InventoryService {
 
     private final InventoryRepository inventoryRepository;
 
-    public void findInvenSearch(ShuzInvenRequestDto requestDto) {
-        /*
-        Inventory inventory = requestDto.toEntity();
-        long no = inventory.getShoesNo();
-        String size = inventory.getShoesSize();
+    public List<ShuzInvenResponseDto> findInvenSearch(ShuzInvenRequestDto requestDto) {
 
-        List<ShuzInvenResponseDto> dto = inventoryRepository.findInvenSearch(no, size).stream()
-                .map(ShuzInvenResponseDto::new)
-                .collect(Collectors.toList());
-
-        System.out.println(dto);
-*/
         Long no = requestDto.getShoesNo();
         String size = requestDto.getShoesSize();
+
+        List<ShuzInvenResponseDto> shuzInvenResponseDtos = new ArrayList<>();
+        List<Map<String, Object>> list = inventoryRepository.findInvenSearch(no, size);
+
+        for(Map<String,Object> map : list){
+            ShuzInvenResponseDto shuzInvenResponseDto = ShuzInvenResponseDto.builder()
+                    .storeNumber((String) map.get("storeNumber"))
+                    .storeName((String) map.get("storeName"))
+                    .storeLocation((String) map.get("storeLocation"))
+                    .invenQuantity((Integer) map.get("invenQuantity"))
+                    .build();
+            shuzInvenResponseDtos.add(shuzInvenResponseDto);
+        }
+
+        return shuzInvenResponseDtos;
 
 //        inventoryRepository.findInvenSearch(no, size).stream()
 //                .map(ShuzInvenResponseDto::new)
