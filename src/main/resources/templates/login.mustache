@@ -2,22 +2,23 @@
 <div class="main-container">
     <div class="main-wrap">
         <header>
-
             <div class="logo-wrap">
                 <span>SHUZ</span>
             </div>
         </header>
         <section class="login-input-section-wrap">
+            <form action="/login" method="post">
             <div class="login-input-wrap">
-                <input placeholder="아이디" type="text">
+                <input placeholder="아이디" type="text" name="id">
             </div>
             <div class="login-input-wrap password-wrap">
-                <input placeholder="비밀번호" type="password">
+                <input placeholder="비밀번호" type="password" name="password">
             </div>
             <div class="login-button-wrap">
-                <button>로그인</button>
+                <button type="submit">로그인</button>
             </div>
-            <p class="forget-msg">비밀번호 찾기 | 회원가입</p>
+                <p class="forget-msg"><a href="#">비밀번호 찾기</a> | <a href="/join">회원가입</a></p>
+            </form>
         </section>
     </div>
 </div>
