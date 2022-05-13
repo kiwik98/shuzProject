@@ -29,6 +29,7 @@ public class InventoryService {
 
         for(Map<String,Object> map : list){
             ShuzInvenResponseDto shuzInvenResponseDto = ShuzInvenResponseDto.builder()
+                    .invenNo((Long) map.get("invenNo"))
                     .storeNumber((String) map.get("storeNumber"))
                     .storeName((String) map.get("storeName"))
                     .storeLocation((String) map.get("storeLocation"))

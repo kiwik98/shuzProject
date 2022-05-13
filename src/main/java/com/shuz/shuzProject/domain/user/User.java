@@ -23,7 +23,7 @@ public class User {
     private String userId;
     private String password;
     private char gender;
-    private String role; //권한 default = 'user'
+    private String role; //일반유저는 null/관리자는 admin
 
 
     @Builder

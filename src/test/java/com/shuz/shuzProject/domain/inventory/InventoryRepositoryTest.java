@@ -31,6 +31,7 @@ class InventoryRepositoryTest {
 
         for(Map<String,Object> map : test){
             ShuzInvenResponseDto shuzInvenResponseDto = ShuzInvenResponseDto.builder()
+                    .invenNo((Long) map.get("invenNo"))
                     .storeNumber((String) map.get("storeNumber"))
                     .storeName((String) map.get("storeName"))
                     .storeLocation((String) map.get("storeLocation"))
@@ -41,6 +42,7 @@ class InventoryRepositoryTest {
 
         System.out.printf("----------------------------------------------------------------------\n");
         for(ShuzInvenResponseDto shuzInvenResponseDto : shuzInvenResponseDtos){
+            System.out.printf("재고번호 : " + shuzInvenResponseDto.getInvenNo() + "\n");
             System.out.printf("상점이름 : " + shuzInvenResponseDto.getStoreName() + "\n");
             System.out.printf("상점번호 : " + shuzInvenResponseDto.getStoreNumber() + "\n");
             System.out.printf("상점위치 : " + shuzInvenResponseDto.getStoreLocation() + "\n");

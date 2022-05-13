@@ -68,6 +68,9 @@
                                     <label class="btn btn-outline-dark" for="btnradio11">300</label>
                                 </div>
                                 <input type="hidden" class="shoesNo" value="{{shuz.shoesNo}}">
+                                {{#user.role}}
+                                <input type="hidden" class="role" value="{{user.role}}">
+                                {{/user.role}}
                             </div>
                             <div class="btn_group">
                                 <div class="d-grid gap-2 btn">

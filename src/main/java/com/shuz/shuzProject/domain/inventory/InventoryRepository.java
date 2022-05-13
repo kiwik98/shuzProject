@@ -13,7 +13,8 @@ import java.util.Map;
 public interface InventoryRepository extends JpaRepository<Inventory, Long> {
 
 
-    @Query(value = "select st.storeName as storeName, st.storeLocation as storeLocation, st.storeNumber as storeNumber, i.invenQuantity as invenQuantity " +
+    @Query(value = "select st.storeName as storeName, st.storeLocation as storeLocation," +
+            " st.storeNumber as storeNumber, i.invenQuantity as invenQuantity, i.invenNo as invenNo " +
             "from Inventory i join i.store st on i.store = st.storeNo " +
             "join i.shuz sz on i.shuz = sz.shoesNo where sz.shoesNo = :shoesNo " +
             "and i.shoesSize = :shoesSize and i.invenQuantity > 0 ")

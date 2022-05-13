@@ -1,4 +1,4 @@
-package com.shuz.shuzProject.domain;
+package com.shuz.shuzProject.web;
 
 import com.shuz.shuzProject.domain.user.User;
 import com.shuz.shuzProject.service.user.UserService;
