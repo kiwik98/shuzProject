@@ -2,6 +2,18 @@ var main = {
     init : function() {
             var _this = this;
 
+            //위시리스트 버튼 클릭 이벤트
+            $('.wishIcon').on('click', function () {
+                //_this.wishListAdd();
+                console.log("위시리스트버튼");
+                $(this).toggleClass("add");
+                if($(this).hasClass("add")) {
+                    $(".wishIcon").attr("src", "/img/icon/heart2.png");
+                }else{
+                    $(".wishIcon").attr("src", "/img/icon/heart1.png");
+                }
+            });
+            //재고조회 버튼 클릭 이벤트
             $('.btn-invenCheck').on('click', function () {
                 _this.invenCheck();
             });
@@ -15,15 +27,16 @@ var main = {
                     $('#q-' + no).html("<input type='text' id='qu-"+no+"' name='quantity' style='width:30px;'>");
                 }
                 else {
-                    var quantity = $('#qu-'+no).val();
+                    var invenQuantity = $('#qu-'+no).val();
 
                     $.ajax({ // shoesNo + shoesSize json문자열로 컨트롤러에 넘기기
                                   type: 'PUT',
                                   url: '/api/invenQuantity/'+no,
                                   dataType: 'json',
                                   contentType: 'application/json; charset=utf-8',
-                                  data: quantity
-                              }).done(function() {
+                                  data: invenQuantity
+                              }).done(function(quantity) {
+                                $('#q-' + no).html('<span class="quantity">'+quantity+'</span>');
                               }).fail(function (error) {
                                   alert(JSON.stringify(error));
                               });
@@ -62,6 +75,15 @@ var main = {
           }).fail(function (error) {
               alert(JSON.stringify(error));
           });
+    },
+    wishListAdd : function () { //위시리스트 클릭 이벤트
+        console.log("위시리스트버튼");
+        $(this).toggleClass("add");
+        if($(this).hasClass("add")) {
+            $(".wishIcon").attr("src", "/img/icon/heart2.png");
+        }else{
+            $(".wishIcon").attr("src", "/img/icon/heart1.png");
+        }
     }
 
 };

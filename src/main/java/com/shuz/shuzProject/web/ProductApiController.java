@@ -6,6 +6,7 @@ import com.shuz.shuzProject.web.dto.ShuzInvenRequestDto;
 import com.shuz.shuzProject.web.dto.ShuzInvenResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,8 +28,9 @@ public class ProductApiController {
     //재고 수정 API
     @PutMapping("/api/invenQuantity/{invenNo}")
     @ResponseBody
-    public void invenQuantity(@PathVariable Long invenNo, @RequestBody int quantity) {
-        System.out.println(invenNo);
-        System.out.println(quantity);
+    public int invenQuantity(@PathVariable Long invenNo, @RequestBody int invenQuantity) {
+        inventoryService.updateQuantity(invenQuantity, invenNo);
+
+        return invenQuantity;
     }
 }

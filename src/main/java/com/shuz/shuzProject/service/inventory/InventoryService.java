@@ -6,8 +6,8 @@ import com.shuz.shuzProject.web.dto.ShuzInvenResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +19,7 @@ public class InventoryService {
 
     private final InventoryRepository inventoryRepository;
 
+    //재고 조회
     public List<ShuzInvenResponseDto> findInvenSearch(ShuzInvenRequestDto requestDto) {
 
         Long no = requestDto.getShoesNo();
@@ -37,14 +38,11 @@ public class InventoryService {
                     .build();
             shuzInvenResponseDtos.add(shuzInvenResponseDto);
         }
-
         return shuzInvenResponseDtos;
-
-//        inventoryRepository.findInvenSearch(no, size).stream()
-//                .map(ShuzInvenResponseDto::new)
-//                .collect(Collectors.toList());
-
-        //inventoryRepository.findInvenSearch(no, size);
-
+    }
+    //재고 수정
+    @Transactional
+    public void updateQuantity(int invenQuantity, Long invenNo) {
+        inventoryRepository.updateQuantity(invenQuantity, invenNo);
     }
 }

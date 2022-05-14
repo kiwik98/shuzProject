@@ -51,5 +51,11 @@ class InventoryRepositoryTest {
         System.out.printf("----------------------------------------------------------------------\n");
 //        Inventory inventory = inventoryRepository.findById(1l).orElseThrow(RuntimeException::new);
     }
-
+    @DisplayName(value = "재고수량 수정 테스트")
+    @Transactional
+    @Test
+    public void invenQuantityTest() {
+        inventoryRepository.updateQuantity(10, 1L);
+        System.out.printf("test");
+    }
 }
