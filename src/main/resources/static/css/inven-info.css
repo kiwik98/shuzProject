@@ -31,12 +31,13 @@
 }
 
 .detail_box_header .title_wrap {
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 4px;
     color: #000;
     font-size: 28px;
     font-weight: bold;
     line-height: 120%;
-    width: 60%;
     margin-bottom: 50px;
 
 }

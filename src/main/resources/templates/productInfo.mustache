@@ -24,10 +24,23 @@
                             </div>
                         </div>
                         <h1 class="title_wrap">
+                            {{^user}}
                             <span class="tit">{{shuz.shoesName}}</span>
-                            <span class="heart" style="position: relative;left: 328px;bottom: 3px;">
-                                <img class="wishIcon" src="/img/icon/heart1.png" style="width:27px;">
+                            {{/user}}
+                            {{#user}}
+                            <span class="tit">{{shuz.shoesName}}</span>
+                            <span class="heart">
+                                {{^wishCheckDto.wishCheck}}
+                                    <img class="wishIcon" src="/img/icon/heart1.png" style="width:27px;">
+                                    <input type="hidden" name="wishNo">
+                                {{/wishCheckDto.wishCheck}}
+                                {{#wishCheckDto.wishCheck}}
+                                    <img class="wishIcon add" src="/img/icon/heart2.png" style="width:27px;">
+                                    <input type="hidden" name="wishNo" value="{{wishCheckDto.wishNo}}">
+                                {{/wishCheckDto.wishCheck}}
+
                             </span>
+                            {{/user}}
                         </h1>
                     </div>
                     <div class="size_wrap">

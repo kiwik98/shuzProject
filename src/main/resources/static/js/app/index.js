@@ -5,12 +5,41 @@ var main = {
             //위시리스트 버튼 클릭 이벤트
             $('.wishIcon').on('click', function () {
                 //_this.wishListAdd();
-                console.log("위시리스트버튼");
+
                 $(this).toggleClass("add");
                 if($(this).hasClass("add")) {
-                    $(".wishIcon").attr("src", "/img/icon/heart2.png");
+                    var no = $('.shoesNo').val();
+                    $.ajax({ //
+                          type: 'POST',
+                          url: '/api/wishList',
+                          dataType: 'json',
+                          contentType: 'application/json; charset=utf-8',
+                          data: no
+                      }).done(function(wishNo) {
+                        $(".wishIcon").attr("src", "/img/icon/heart2.png");
+                        //$(".wishIcon").attr("data-no", wishNo);
+                        $("input[name=wishNo]").val(wishNo);
+                        console.log("추가할 위시번호: "+wishNo);
+                      }).fail(function (error) {
+                          alert(JSON.stringify(error));
+                      });
+
                 }else{
-                    $(".wishIcon").attr("src", "/img/icon/heart1.png");
+
+                        var no = $("input[name=wishNo]").val();
+                        console.log("삭제할 위시번호: "+no);
+
+                      $.ajax({
+                          type: 'DELETE',
+                          url: '/api/wishList/'+no,
+                          dataType: 'json',
+                          contentType: 'application/json; charset=utf-8'
+                      }).done(function() {
+                        $(".wishIcon").attr("src", "/img/icon/heart1.png");
+                        //$(".wishIcon").removeAttr("data-no");
+                      }).fail(function (error) {
+                          alert(JSON.stringify(error));
+                      });
                 }
             });
             //재고조회 버튼 클릭 이벤트
@@ -29,7 +58,7 @@ var main = {
                 else {
                     var invenQuantity = $('#qu-'+no).val();
 
-                    $.ajax({ // shoesNo + shoesSize json문자열로 컨트롤러에 넘기기
+                    $.ajax({ // 해당 재고넘버에 해당하는 재고수량 데이터 넘기기
                                   type: 'PUT',
                                   url: '/api/invenQuantity/'+no,
                                   dataType: 'json',
