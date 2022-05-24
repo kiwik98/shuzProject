@@ -1,5 +1,6 @@
 package com.shuz.shuzProject.web;
 
+import com.shuz.shuzProject.domain.shuz.Shuz;
 import com.shuz.shuzProject.service.shuz.ShuzService;
 import com.shuz.shuzProject.web.dto.ShuzListResponseDto;
 import lombok.RequiredArgsConstructor;
@@ -38,7 +39,8 @@ public class ShuzController {
     @GetMapping("/shuz/{shoesSex}/{shoesType}")
     public String findByShoesTypeAll(@PathVariable char shoesSex, @PathVariable char shoesType, Model model,
                                      @PageableDefault(size = 8, sort = "shoesNo", direction = Sort.Direction.ASC) Pageable pageable) {
-        String type = shoesType(shoesType);
+        //String type = shoesType(shoesType);
+        String type = Shuz.getBrandName(shoesType);
         List<ShuzListResponseDto> list = shuzService.findByShoesTypeAll(shoesSex, shoesType, pageable);
         model.addAttribute("shuz", list);
         model.addAttribute("previous", pageable.previousOrFirst().getPageNumber());
@@ -66,7 +68,8 @@ public class ShuzController {
                                      @PathVariable String brandType, Model model,
                                      @PageableDefault(size = 8, sort = "shoesNo", direction = Sort.Direction.ASC) Pageable pageable) {
 
-        String type = shoesType(shoesType);
+        //String type = shoesType(shoesType);
+        String type = Shuz.getBrandName(shoesType);
         List<ShuzListResponseDto> list = shuzService.findByBrandTypeOne(shoesSex, shoesType, brandType, pageable);
         model.addAttribute("shuz", list);
         model.addAttribute("previous", pageable.previousOrFirst().getPageNumber());

@@ -33,4 +33,20 @@ public class Shuz {
         this.shoesPrice = shoesPrice;
         this.shoesImg = shoesImg;
     }
+    // 신발 종류 코드 -> 문자열로 변환 함수
+    public static String getBrandName(char shoesType) {
+        String type = "";
+        switch (shoesType) { // 머스테치 if문 x 컨트롤러에서 최종값 보내주기
+            case '0':
+                type = "스니커즈";
+                break;
+            case '1':
+                type = "스포츠";
+                break;
+            case '2':
+                type = "캔버스";
+                break;
+        }
+        return type;
+    }
 }

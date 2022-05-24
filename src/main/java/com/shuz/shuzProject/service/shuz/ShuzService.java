@@ -4,12 +4,14 @@ import com.shuz.shuzProject.domain.shuz.Shuz;
 import com.shuz.shuzProject.domain.shuz.ShuzRepository;
 import com.shuz.shuzProject.web.dto.ShuzListResponseDto;
 import com.shuz.shuzProject.web.dto.ShuzResponseDto;
+import com.shuz.shuzProject.web.dto.WishListResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
@@ -56,7 +58,7 @@ public class ShuzService {
     }
 
     /* 상세페이지 */
-    public ShuzResponseDto findByProductInfoOne(long shoesNo){
+    public ShuzResponseDto findByProductInfoOne(long shoesNo) {
 
         Shuz entity = shuzRepository.findById(shoesNo).orElseThrow(() ->
                 new IllegalArgumentException("해당 상품이 없습니다. id="+ shoesNo));
@@ -64,5 +66,28 @@ public class ShuzService {
         return new ShuzResponseDto(entity);
 
     }
+    /* 상세페이지 */
 
+    /* 위시리스트 */
+    public List<WishListResponseDto> getWishList(long userNo) {
+
+        List<WishListResponseDto> dto = new ArrayList<>();
+        List<Map<String, Object>> list = shuzRepository.getWishList(userNo);
+
+        for(Map<String, Object> map : list) {
+            WishListResponseDto wishListResponseDto = WishListResponseDto.builder()
+                    .shoesNo((Long) map.get("shoesNo"))
+                    .shoesName((String) map.get("shoesName"))
+                    .brandType((String) map.get("brandType"))
+                    .shoesPrice((String) map.get("shoesPrice"))
+                    .shoesImg((String) map.get("shoesImg"))
+                    .wishNo((Long) map.get("wishNo"))
+                    .build();
+            dto.add(wishListResponseDto);
+        }
+        return dto;
+    }
+
+    public int getWishCount(long userNo) {return shuzRepository.getWishCount(userNo);}
+    /* 위시리스트 */
 }

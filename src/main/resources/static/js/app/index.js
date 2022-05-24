@@ -42,6 +42,21 @@ var main = {
                       });
                 }
             });
+
+            //위시리스트 삭제 버튼 클릭 이벤트
+            $('.wishDel').on('click', function() {
+               var no = $(this).data("no");
+               $.ajax({
+                 type: 'DELETE',
+                 url: '/api/wishList/'+no,
+                 dataType: 'json',
+                 contentType: 'application/json; charset=utf-8'
+             }).done(function() {
+               window.location.href = '/wishList';
+             }).fail(function (error) {
+                 alert(JSON.stringify(error));
+             });
+            });
             //재고조회 버튼 클릭 이벤트
             $('.btn-invenCheck').on('click', function () {
                 _this.invenCheck();
@@ -104,15 +119,6 @@ var main = {
           }).fail(function (error) {
               alert(JSON.stringify(error));
           });
-    },
-    wishListAdd : function () { //위시리스트 클릭 이벤트
-        console.log("위시리스트버튼");
-        $(this).toggleClass("add");
-        if($(this).hasClass("add")) {
-            $(".wishIcon").attr("src", "/img/icon/heart2.png");
-        }else{
-            $(".wishIcon").attr("src", "/img/icon/heart1.png");
-        }
     }
 
 };
